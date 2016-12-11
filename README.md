@@ -19,48 +19,47 @@
 
 
 ## 2. Aircraft Carrier Application (~100 mins) [25p]
-The task is to create an application where you can add aircrafts to the aircraft carrier.
+The task is to create an application where you can add aircraft to an aircraft carrier.
 
-### Aircrafts
-Create a class that represents an aircraft
+### Aircraft
+Create a class that represents an aircraft.
 
-There are 2 types of aircrafts: F16 and F35
+There are 2 types of aircrafts: F16 and F35.
+|Type|Max ammo | Base damage|
+|:---|--------:|----:|
+|F16| 8|30|
+|F35|12|50|
 
-Both aircraft should track how many ammo it has
+All the aircraft should be created with 0 ammo.  They must be refilled either by their own method, or that of the Carrier.
 
-#### F16
- - Max ammo: 8
- - Base damage: 30
-
-#### F35
- - Max ammo: 12
- - Base damage: 50
-
-All the aircrafts should be created with empty ammo store
 All aircrafts should be displayed as string like this: `Type F35, Ammo: 10, Base Damage: 50, All Damage: 500`
 
-Methods:
+### Methods
 
 #### fight
-- It should use all the ammos (set it to 0) and it should return the damage it took
-- The damage is the multiplication of the base damage and the ammos
+When called, this method:-
+- Uses up all of its ammos (depleting it to 0).  
+- Returns the total amount of damage it can inflict.  This is computed as ammo * base damage.
+
 
 #### refill
-- It should take an number as parameter and substract as much ammo as possibe,
-- It can't have more ammo than the number or the max ammo.
-- It should return the substracted ammo amount
+This method takes an input amount which is the number of rounds of ammo to be refilled (eg. add 5 to the ammo of the aircraft).
+
+While the amount added can be any value: 
+- An aircraft cannot have, in total, more ammo than its Max ammo
+- If given more ammo than it can hold, the remainder is returned.
+
+*For example, an F16 can hold a maximum of 8 rounds of ammo.  Consider "A", a particular F16 that holds 6 rounds.  When A.refill(4) runs it returns 2 (as 6 + 4 = 10, but as only 8 can be stored, 2 are returned).*
 
 ### Carrier
-Create a class that represents an aircraft-carrier
+Create a class that represents an aircraft carrier.  The Carrier class must:
+- Store aircraft
+- Track the total ammo it is loaded with and this value is given when the Carrier is constructed
+- Initialised with a starting number of health points which is 3,000
 
-- The carrier should be able to store aircrafts
-- Each carrier should have a store of ammo represented as number
-- It should store a health point as a number
-- The inital ammo and health point should be give by a parameter in it's constructor
-
-All aircraft carriers should be displayed as string like this:
+For an aircraft carrier, the `toString()` reports as follows:-
 ```
-Aircraft count: 4, Ammo Storage: 2300, Total damage: 2280
+Aircraft count: 5, Ammo Storage: 2300, Total damage: 2280, Health Remaining: 720
 Aircrafts:
 Type F35, Ammo: 12, Base Damage: 50, All Damage: 600
 Type F35, Ammo: 12, Base Damage: 50, All Damage: 600
@@ -68,21 +67,22 @@ Type F35, Ammo: 12, Base Damage: 50, All Damage: 600
 Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
 Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
 ```
-If the health points are 0 than like this: `It's dead Jim :(`
+If the Carrier's health points fall to 0 (or less) then the `toString()` instead returns `It's dead Jim :(`.
 
-Methods:
+### Methods
 
 #### addAircraft
-- It should take a string as the type of the aircraft and add a new aircraft to its store
+This adds an aircraft of type (either F16 or F35) to the list of Aircraft in (associated with) the Carrier.  For example `.addAircraft("F16");`.
 
 #### fill
-- It should fill the aircraft with ammo and substract the needed ammo from the ammo_storage.
-- If there is not enough ammo than it should fill the F35 types first
-- If there is no ammo when this method is called it should throw an exception.
+This one method tops up all the aircraft associated with the Carrier, filling them up with ammo, with the following rules:-
+- The ammo it uses reduces its own stores equally (e.g. *if the carrier has 100 rounds, and refills "A" with 8, then the carrier has 92 rounds remaining*)
+- If there is not enough ammo to refill all the aircraft, the F35s take priority and are refilled first
+- It can only use the ammo it has, the ammo cannot go negative
+- If called and there's no ammo remaining, then it must throw an error.
 
 #### fight
-- It should take another carrier as a parameter and fire all the ammo
-from all of its aircrafts to it than substract all the damage from it's health points
+This method must take another Carrier as a parameter (aka `the target`) and it applies all the ammo from all of its associated aircraft (computing the same damage as before (Base * Ammo used) to reduce the health of the target while increasing the damage to its own aircraft.
 
 ## Understanding (15 mins) [4p]
 Take a look at the following code!
@@ -111,3 +111,5 @@ public class Main {
 What's get printed out? [2p] What is wrong with the code currently and why? [2p]
 
 #### Your answer:
+
+
