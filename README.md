@@ -25,6 +25,7 @@ The task is to create an application where you can add aircraft to an aircraft c
 Create a class that represents an aircraft.
 
 There are 2 types of aircrafts: F16 and F35.
+
 |Type|Max ammo | Base damage|
 |:---|--------:|----:|
 |F16| 8|30|
