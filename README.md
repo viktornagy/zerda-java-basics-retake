@@ -55,8 +55,8 @@ Create a class that represents an aircraft-carrier
 
 - The carrier should be able to store aircrafts
 - Each carrier should have a store of ammo represented as number
-- The inital ammo should be give by a parameter in it's constructor
 - It should store a health point as a number
+- The inital ammo and health point should be give by a parameter in it's constructor
 
 All aircraft carriers should be displayed as string like this:
 ```
