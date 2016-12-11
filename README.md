@@ -83,7 +83,7 @@ This one method tops up all the aircraft associated with the Carrier, filling th
 - If called and there's no ammo remaining, then it must throw an error.
 
 #### fight
-This method must take another Carrier as a parameter (aka `the target`) and it applies all the ammo from all of its associated aircraft (computing the same damage as before (Base * Ammo used) to reduce the health of the target while increasing the damage to its own aircraft.
+This method must take another Carrier as a parameter (aka `the target`) and it applies all the ammo from all of its associated aircraft (computing the same damage as before (Base * Ammo used) to reduce the health of the target.
 
 ## Understanding (15 mins) [4p]
 Take a look at the following code!
