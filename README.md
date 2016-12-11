@@ -72,7 +72,7 @@ If the health points are 0 than like this: `It's dead Jim :(`
 
 Methods:
 
-#### add_aircraft
+#### addAircraft
 - It should take a string as the type of the aircraft and add a new aircraft to its store
 
 #### fill
