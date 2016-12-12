@@ -6,7 +6,7 @@ package com.greenfox.exams.java.retake;
 public class F35 extends AirCraft {
 
     public F35(){
-        this.typID="com.greenfox.exams.java.retake.F35";
+        this.typID="F35";
         this.maxAmmo=10;
     }
 

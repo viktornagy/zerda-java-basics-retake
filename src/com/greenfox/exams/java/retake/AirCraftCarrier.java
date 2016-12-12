@@ -1,5 +1,4 @@
 package com.greenfox.exams.java.retake;
-
 import java.util.ArrayList;
 
 /**
@@ -7,26 +6,24 @@ import java.util.ArrayList;
  */
 public class AirCraftCarrier {
 
-    public class AircraftCarrier {
-
-        public AircraftCarrier(int ammo){
+        public AirCraftCarrier(int ammo){
             this.ammo=ammo;
             this.healtPoint=3000;
-            this.aircrafts=new ArrayList<AirCraft>();
+            this.airCrafts=new ArrayList<AirCraft>();
         }
 
         Integer ammo;
         Integer healtPoint;
-        ArrayList<AirCraft> aircrafts;
+        ArrayList<AirCraft> airCrafts;
 
         public  void addAircraft(String typ) {
             switch (typ) {
-                case "com.greenfox.exams.java.retake.F16":
-                    this.aircrafts.add(new F16());
+                case "F16":
+                    this.airCrafts.add(new F16());
                     break;
 
-                case "com.greenfox.exams.java.retake.F35":
-                    this.aircrafts.add(new F35());
+                case "F35":
+                    this.airCrafts.add(new F35());
                     break;
 
                 default:
@@ -37,15 +34,16 @@ public class AirCraftCarrier {
 
         public String getAircrafts(){
             String s="";
-            for(AirCraft a:this.aircrafts){
+            for(AirCraft a:this.airCrafts){
                 s+=a.toString();
             }
+            return
         }
 
 
         @Override
         public String toString(){
-            return "AircraftCount: "+this.aircrafts.size()+"Ammo: "+this.ammo;
+            return "AircraftCount: "+this.airCrafts.size()+"Ammo: "+this.ammo;
         }
     }
 

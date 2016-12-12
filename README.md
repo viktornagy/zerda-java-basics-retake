@@ -113,7 +113,8 @@ What's get printed out? [2p] What is wrong with the code currently and why? [2p]
 
 #### Your answer:
 
-B class field-jében „s” String típusú változónak statikusnak kell lennie, mert utána egy statikus függvényben (p) használjuk.
+B class field-jében „s” String típusú változónak statikusnak kell lennie, mert utána egy statikus függvényben (p) használjuk. A lényeg, hogy a függvénynek és a változónak azonosnak kell lenniük, vagy mindketten static vagy mindketten public.
+
 A print out:
 
 alma

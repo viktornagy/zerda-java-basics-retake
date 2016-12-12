@@ -6,7 +6,7 @@ package com.greenfox.exams.java.retake;
 public class F16 extends AirCraft {
 
     public F16(){
-        this.typID="com.greenfox.exams.java.retake.F16";
+        this.typID="F16";
     }
 
     @Override
