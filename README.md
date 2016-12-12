@@ -24,16 +24,16 @@ The task is to create an application where you can add aircraft to an aircraft c
 ### Aircraft
 Create a class that represents an aircraft.
 
-There are 2 types of aircrafts: F16 and F35.
+There are 2 types of aircrafts: com.greenfox.exams.java.retake.F16 and com.greenfox.exams.java.retake.F35.
 
 |Type|Max ammo | Base damage|
 |:---|--------:|----:|
-|F16| 8|30|
-|F35|12|50|
+|com.greenfox.exams.java.retake.F16| 8|30|
+|com.greenfox.exams.java.retake.F35|12|50|
 
 All the aircraft should be created with 0 ammo.  They must be refilled either by their own method, or that of the Carrier.
 
-All aircrafts should be displayed as string like this: `Type F35, Ammo: 10, Base Damage: 50, All Damage: 500`
+All aircrafts should be displayed as string like this: `Type com.greenfox.exams.java.retake.F35, Ammo: 10, Base Damage: 50, All Damage: 500`
 
 ### Methods
 
@@ -50,7 +50,7 @@ While the amount added can be any value:
 - An aircraft cannot have, in total, more ammo than its Max ammo
 - If given more ammo than it can hold, the remainder is returned.
 
-*For example, an F16 can hold a maximum of 8 rounds of ammo.  Consider "A", a particular F16 that holds 6 rounds.  When A.refill(4) runs it returns 2 (as 6 + 4 = 10, but as only 8 can be stored, 2 are returned).*
+*For example, an com.greenfox.exams.java.retake.F16 can hold a maximum of 8 rounds of ammo.  Consider "A", a particular com.greenfox.exams.java.retake.F16 that holds 6 rounds.  When A.refill(4) runs it returns 2 (as 6 + 4 = 10, but as only 8 can be stored, 2 are returned).*
 
 ### Carrier
 Create a class that represents an aircraft carrier.  The Carrier class must:
@@ -62,18 +62,18 @@ For an aircraft carrier, the `toString()` reports as follows:-
 ```
 Aircraft count: 5, Ammo Storage: 2300, Total damage: 2280, Health Remaining: 720
 Aircrafts:
-Type F35, Ammo: 12, Base Damage: 50, All Damage: 600
-Type F35, Ammo: 12, Base Damage: 50, All Damage: 600
-Type F35, Ammo: 12, Base Damage: 50, All Damage: 600
-Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
-Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
+Type com.greenfox.exams.java.retake.F35, Ammo: 12, Base Damage: 50, All Damage: 600
+Type com.greenfox.exams.java.retake.F35, Ammo: 12, Base Damage: 50, All Damage: 600
+Type com.greenfox.exams.java.retake.F35, Ammo: 12, Base Damage: 50, All Damage: 600
+Type com.greenfox.exams.java.retake.F16, Ammo: 8, Base Damage: 30, All Damage: 240
+Type com.greenfox.exams.java.retake.F16, Ammo: 8, Base Damage: 30, All Damage: 240
 ```
 If the Carrier's health points fall to 0 (or less) then the `toString()` instead returns `It's dead Jim :(`.
 
 ### Methods
 
 #### addAircraft
-This adds an aircraft of type (either F16 or F35) to the list of Aircraft in (associated with) the Carrier.  For example `.addAircraft("F16");`.
+This adds an aircraft of type (either com.greenfox.exams.java.retake.F16 or com.greenfox.exams.java.retake.F35) to the list of Aircraft in (associated with) the Carrier.  For example `.addAircraft("com.greenfox.exams.java.retake.F16");`.
 
 #### fill
 This one method tops up all the aircraft associated with the Carrier, filling them up with ammo, with the following rules:-
@@ -113,4 +113,11 @@ What's get printed out? [2p] What is wrong with the code currently and why? [2p]
 
 #### Your answer:
 
+B class field-jében „s” String típusú változónak statikusnak kell lennie, mert utána egy statikus függvényben (p) használjuk.
+A print out:
 
+alma
+almakorte
+almakortekorte
+almakortekortekorte
+korte

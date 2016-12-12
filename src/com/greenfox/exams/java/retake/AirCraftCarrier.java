@@ -1,3 +1,5 @@
+package com.greenfox.exams.java.retake;
+
 import java.util.ArrayList;
 
 /**
@@ -19,11 +21,11 @@ public class AirCraftCarrier {
 
         public  void addAircraft(String typ) {
             switch (typ) {
-                case "F16":
+                case "com.greenfox.exams.java.retake.F16":
                     this.aircrafts.add(new F16());
                     break;
 
-                case "F35":
+                case "com.greenfox.exams.java.retake.F35":
                     this.aircrafts.add(new F35());
                     break;
 
